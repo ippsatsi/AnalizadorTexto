@@ -57,6 +57,7 @@
     <Compile Include="Palabra.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utiles.cs" />
     <EmbeddedResource Include="AnaTexto.resx">
       <DependentUpon>AnaTexto.cs</DependentUpon>
     </EmbeddedResource>
