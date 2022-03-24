@@ -16,5 +16,23 @@ namespace AnalizadorTexto
         {
             InitializeComponent();
         }
+
+        private void btCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                //agregar y buscar palabra
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                //guardar expresion en la lista   f
+            }
+        }
     }
 }
