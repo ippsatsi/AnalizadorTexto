@@ -19,6 +19,7 @@ namespace AnalizadorTexto
         public AnaTexto()
         {
             InitializeComponent();
+            txtListExpresiones.Clear();
 
 
         }
@@ -62,24 +63,33 @@ namespace AnalizadorTexto
             {
                 //guardar expresion en la lista   f
                 string textoExpresiones, expresion = txtExpresion.Text.Trim();
-                Palabra nPa = new Palabra();
-
-                //todo: verificar cadena no vacia
-                for (int i = 0; i < expresion.Split(' ').Length; i++)
+                //Palabra nPa = new Palabra();
+                textoExpresiones = txtListExpresiones.Text;
+                if (textoExpresiones == "")
                 {
-
-                    Palabra nPalabra = new Palabra(expresion.Split(' ')[i]);
-                    Console.WriteLine(nPalabra.Cadena);
-                    Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
-                    //nPa.Sugerencias.Agregar(nPalabra);
-                    Lista<Palabra> fg = nPa.Sugerencias;
-                    
+                    txtListExpresiones.Text = expresion;
+                }
+                else
+                {
+                    txtListExpresiones.Text = textoExpresiones + "\r\n" + expresion;
+                    //todo: llamar a funcion procesar expresion
                 }
 
+                txtExpresion.Clear();
+
+                //for (int i = 0; i < expresion.Split(' ').Length; i++)
+                //{
+
+                //    Palabra nPalabra = new Palabra(expresion.Split(' ')[i]);
+                //    Console.WriteLine(nPalabra.Cadena);
+                //    Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
+                //    //nPa.Sugerencias.Agregar(nPalabra);
+                //    Lista<Palabra> fg = nPa.Sugerencias;
+
+                //}
+
                 //lista_expre.Agregar(nPa);
-                //textoExpresiones = Utiles.mostrarExpresiones(lista_expre);
-                //txtListExpresiones.Clear();
-                //txtListExpresiones.Text = textoExpresiones;
+
             }
         }
 
