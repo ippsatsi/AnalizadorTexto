@@ -14,7 +14,6 @@ namespace AnalizadorTexto
         public Lista()
         {
 
-
         }
 
         public Nodo<T> Inicial { get => inicial; }

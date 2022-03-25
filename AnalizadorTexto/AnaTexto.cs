@@ -28,9 +28,22 @@ namespace AnalizadorTexto
             //Palabra pla = new Palabra("Luis");
             lista_p.Agregar(new Palabra("Jose"));
             lista_p.Agregar(new Palabra("Miguel"));
-            lista_expre.Agregar()
-            Console.WriteLine($"pala: {pla.Cadena}");
+            lista_p.Agregar(new Palabra("Luis"));
+            lista_expre.Agregar(new Palabra("Luis", lista_p));
+            //Console.WriteLine($"pala: {pla.Cadena}");
             //Console.WriteLine($"palabra: {pla.ToString()}");
+
+            Nodo<Palabra> n;
+
+            n = lista_expre.Inicial;
+            
+            Console.WriteLine($"mi nodo: {n.Dato.ToString()}");
+            while (n != null)
+            {
+                Console.WriteLine(n.Dato.ToString());
+
+                n = n.Siguiente;
+            }
         }
 
         private void btCerrar_Click(object sender, EventArgs e)
@@ -56,16 +69,17 @@ namespace AnalizadorTexto
                 {
 
                     Palabra nPalabra = new Palabra(expresion.Split(' ')[i]);
-                    Console.WriteLine(nPalabra.ToString());
-                    Console.WriteLine($" i= {i} ");
-                    nPa.Sugerencias.Agregar(nPalabra);
+                    Console.WriteLine(nPalabra.Cadena);
+                    Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
+                    //nPa.Sugerencias.Agregar(nPalabra);
+                    Lista<Palabra> fg = nPa.Sugerencias;
                     
                 }
 
-                lista_expre.Agregar(nPa);
-                textoExpresiones = Utiles.mostrarExpresiones(lista_expre);
-                txtListExpresiones.Clear();
-                txtListExpresiones.Text = textoExpresiones;
+                //lista_expre.Agregar(nPa);
+                //textoExpresiones = Utiles.mostrarExpresiones(lista_expre);
+                //txtListExpresiones.Clear();
+                //txtListExpresiones.Text = textoExpresiones;
             }
         }
 
