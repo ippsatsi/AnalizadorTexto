@@ -14,6 +14,7 @@ namespace AnalizadorTexto
 
         public Nodo()
         {
+
         }
 
         public Nodo(int posicion, T dato, Nodo<T> siguiente)

@@ -40,6 +40,7 @@ namespace Nodos1
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.Size = new System.Drawing.Size(786, 342);
             this.dgvLista.TabIndex = 0;
+            //this.dgvLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellContentClick);
             // 
             // frmLista
             // 

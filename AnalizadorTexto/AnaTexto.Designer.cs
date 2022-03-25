@@ -30,9 +30,9 @@ namespace AnalizadorTexto
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtExpresion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtListExpresiones = new System.Windows.Forms.TextBox();
             this.btCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,12 +45,13 @@ namespace AnalizadorTexto
             this.label1.TabIndex = 0;
             this.label1.Text = "Expresion";
             // 
-            // textBox1
+            // txtExpresion
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(451, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtExpresion.Location = new System.Drawing.Point(33, 54);
+            this.txtExpresion.Name = "txtExpresion";
+            this.txtExpresion.Size = new System.Drawing.Size(451, 20);
+            this.txtExpresion.TabIndex = 1;
+            this.txtExpresion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExpresion_KeyDown);
             // 
             // label2
             // 
@@ -61,13 +62,13 @@ namespace AnalizadorTexto
             this.label2.TabIndex = 2;
             this.label2.Text = "Historial";
             // 
-            // textBox2
+            // txtListExpresiones
             // 
-            this.textBox2.Location = new System.Drawing.Point(33, 151);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(451, 258);
-            this.textBox2.TabIndex = 3;
+            this.txtListExpresiones.Location = new System.Drawing.Point(33, 151);
+            this.txtListExpresiones.Multiline = true;
+            this.txtListExpresiones.Name = "txtListExpresiones";
+            this.txtListExpresiones.Size = new System.Drawing.Size(451, 258);
+            this.txtListExpresiones.TabIndex = 3;
             // 
             // btCerrar
             // 
@@ -77,19 +78,21 @@ namespace AnalizadorTexto
             this.btCerrar.TabIndex = 4;
             this.btCerrar.Text = "Cerrar";
             this.btCerrar.UseVisualStyleBackColor = true;
+            this.btCerrar.Click += new System.EventHandler(this.btCerrar_Click);
             // 
-            // Form1
+            // AnaTexto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 472);
             this.Controls.Add(this.btCerrar);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtListExpresiones);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtExpresion);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "AnaTexto";
             this.Text = "Analizador de Texto";
+            this.Load += new System.EventHandler(this.AnaTexto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,9 +101,9 @@ namespace AnalizadorTexto
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtExpresion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtListExpresiones;
         private System.Windows.Forms.Button btCerrar;
     }
 }
