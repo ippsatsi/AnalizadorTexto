@@ -34,6 +34,10 @@ namespace AnalizadorTexto
             this.label2 = new System.Windows.Forms.Label();
             this.txtListExpresiones = new System.Windows.Forms.TextBox();
             this.btCerrar = new System.Windows.Forms.Button();
+            this.sug1 = new System.Windows.Forms.Label();
+            this.sug2 = new System.Windows.Forms.Label();
+            this.sug3 = new System.Windows.Forms.Label();
+            this.sug4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -80,11 +84,51 @@ namespace AnalizadorTexto
             this.btCerrar.UseVisualStyleBackColor = true;
             this.btCerrar.Click += new System.EventHandler(this.btCerrar_Click);
             // 
+            // sug1
+            // 
+            this.sug1.AutoSize = true;
+            this.sug1.Location = new System.Drawing.Point(33, 81);
+            this.sug1.Name = "sug1";
+            this.sug1.Size = new System.Drawing.Size(30, 13);
+            this.sug1.TabIndex = 5;
+            this.sug1.Text = "sug1";
+            // 
+            // sug2
+            // 
+            this.sug2.AutoSize = true;
+            this.sug2.Location = new System.Drawing.Point(104, 81);
+            this.sug2.Name = "sug2";
+            this.sug2.Size = new System.Drawing.Size(30, 13);
+            this.sug2.TabIndex = 6;
+            this.sug2.Text = "sug2";
+            // 
+            // sug3
+            // 
+            this.sug3.AutoSize = true;
+            this.sug3.Location = new System.Drawing.Point(185, 81);
+            this.sug3.Name = "sug3";
+            this.sug3.Size = new System.Drawing.Size(30, 13);
+            this.sug3.TabIndex = 7;
+            this.sug3.Text = "sug3";
+            // 
+            // sug4
+            // 
+            this.sug4.AutoSize = true;
+            this.sug4.Location = new System.Drawing.Point(256, 81);
+            this.sug4.Name = "sug4";
+            this.sug4.Size = new System.Drawing.Size(30, 13);
+            this.sug4.TabIndex = 8;
+            this.sug4.Text = "sug4";
+            // 
             // AnaTexto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 472);
+            this.Controls.Add(this.sug4);
+            this.Controls.Add(this.sug3);
+            this.Controls.Add(this.sug2);
+            this.Controls.Add(this.sug1);
             this.Controls.Add(this.btCerrar);
             this.Controls.Add(this.txtListExpresiones);
             this.Controls.Add(this.label2);
@@ -105,6 +149,10 @@ namespace AnalizadorTexto
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtListExpresiones;
         private System.Windows.Forms.Button btCerrar;
+        private System.Windows.Forms.Label sug1;
+        private System.Windows.Forms.Label sug2;
+        private System.Windows.Forms.Label sug3;
+        private System.Windows.Forms.Label sug4;
     }
 }
 

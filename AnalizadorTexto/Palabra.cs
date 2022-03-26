@@ -52,7 +52,6 @@ namespace AnalizadorTexto
                 {
                     expresion = expresion + "\r\n\t\t\t\t\t\t- " + nPalabra.Dato.cadena;
                 }
-                //expresion = expresion + " - " + nPalabra.Dato.cadena;
                 nPalabra = nPalabra.Siguiente;
                 p++;
             }

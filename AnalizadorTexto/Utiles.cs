@@ -8,22 +8,9 @@ namespace AnalizadorTexto
 {
     public static class Utiles
     {
-        //public void 
+
         //funcion mostrar sugerencias
-        public static string mostrarExpresiones(Lista<Palabra>lPlbra)
-        {
-            string expresion, resultado = null;
-            Nodo<Palabra> nPa = lPlbra.Inicial;
-            while(nPa != null)
-            {
-                expresion = sugerenciasToString(nPa.Dato);
-
-                resultado = resultado + expresion + "\r\n";
-            }
-            return resultado;
-        }
-
-        public static string sugerenciasToString(Palabra plbra)
+        public static string sugerencias(Palabra plbra)
         {
             string resultado = null;
 
@@ -61,12 +48,6 @@ namespace AnalizadorTexto
                     Utiles.procesarExpresion(sugerencia, mi_nodo.Dato.Sugerencias);
                     
                 }
-                //listaP.
-                //Console.WriteLine(nPalabra.Cadena);
-                //Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
-                //nPa.Sugerencias.Agregar(nPalabra);
-                //Lista<Palabra> fg = nPa.Sugerencias;
-
             }
             return;
         }

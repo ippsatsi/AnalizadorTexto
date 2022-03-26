@@ -12,40 +12,31 @@ namespace AnalizadorTexto
 {
     public partial class AnaTexto : Form
     {
-        Lista<Palabra> lista_p = new Lista<Palabra>();
+        Lista<Palabra> lista_sug;
         Lista<Palabra> lista_expre = new Lista<Palabra>();
-        Lista<Palabra> lista_temp = new Lista<Palabra>();
-
+        string expresion, textoExpresiones, ult_palabra;
+        Nodo<Palabra> n;
+        private Label[] lbl_sugerencias;
+        int p;
+        
         public AnaTexto()
         {
             InitializeComponent();
             txtListExpresiones.Clear();
+            lbl_sugerencias = new Label[] { sug1, sug2, sug3, sug4};
+        }
 
-
+        private void limpiarSugerencias()
+        {
+            for (int i = 0; i < lbl_sugerencias.Length; i++)
+            {
+                lbl_sugerencias[i].Text = "";
+            }
         }
 
         private void AnaTexto_Load(object sender, EventArgs e)
         {
-            //Palabra pla = new Palabra("Luis");
-            //lista_p.Agregar(new Palabra("Jose"));
-            //lista_p.Agregar(new Palabra("Miguel"));
-            //lista_p.Agregar(new Palabra("Luis"));
-            //lista_expre.Agregar(new Palabra("Luis", lista_p));
-            //Utiles.verlista(lista_expre);
-
-            //int num = lista_expre.BuscarPosicion(pla);
-            //Console.WriteLine($"posicion: {num}---");
-            //Nodo<Palabra> n;
-
-            //n = lista_expre.Inicial;
-            
-            //Console.WriteLine($"mi nodo: {n.Dato.ToString()}");
-            //while (n != null)
-            //{
-            //    Console.WriteLine(n.Dato.ToString());
-
-            //    n = n.Siguiente;
-            //}
+            limpiarSugerencias();
         }
 
         private void btCerrar_Click(object sender, EventArgs e)
@@ -57,13 +48,38 @@ namespace AnalizadorTexto
         {
             if (e.KeyCode == Keys.Space)
             {
-                //agregar y buscar palabra
+                //mostrar sugerencia
+                expresion = txtExpresion.Text.Trim().ToLower();
+                if (expresion != "")
+                {
+                    //obtenemos la ultima palabra escrita
+                    ult_palabra = expresion.Split(' ')[expresion.Split(' ').Length - 1];
+                    //buscamos un nodo q contenga esa palabra
+                    n = lista_expre.BuscarNodo(new Palabra(ult_palabra));
+                    if (n != null)
+                    {
+                        //obtenemos sugerencias
+                        lista_sug = n.Dato.Sugerencias;
+                        Utiles.verlista(lista_sug);
+
+                        //mostrar sugerencias en etiquetas
+                        n = lista_sug.Inicial;
+                        p = 0;
+                        while (n != null && p < lbl_sugerencias.Length)
+                        {
+                            lbl_sugerencias[p].Text = n.Dato.Cadena;
+                            p++;
+                            n = n.Siguiente;
+                        } 
+
+                    }
+                }
             }
 
             if (e.KeyCode == Keys.Enter)
             {
-                string textoExpresiones, expresion = txtExpresion.Text.Trim();
-                //Palabra nPa = new Palabra();
+                expresion = txtExpresion.Text.Trim().ToLower();
+
                 textoExpresiones = txtListExpresiones.Text;
                 if (textoExpresiones == "")
                 {
@@ -77,16 +93,7 @@ namespace AnalizadorTexto
                 Utiles.procesarExpresion(expresion, lista_expre);
 
                 txtExpresion.Clear();
-
-                //Nodo<Palabra> mi_nodo = lista_expre.BuscarNodo(new Palabra("hola"));
-
-                //Lista<Palabra> mi_lista = mi_nodo.Dato.Sugerencias;
-                //Utiles.procesarExpresion("casa", mi_nodo.Dato.Sugerencias);
-                //Console.WriteLine("Nodo encontrado: " + mi_nodo.Dato.ToString());
-                Utiles.verlista(lista_expre);
             }
         }
-
-
     }
 }
