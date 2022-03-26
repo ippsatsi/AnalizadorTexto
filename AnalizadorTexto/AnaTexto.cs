@@ -77,6 +77,12 @@ namespace AnalizadorTexto
                 Utiles.procesarExpresion(expresion, lista_expre);
 
                 txtExpresion.Clear();
+
+                //Nodo<Palabra> mi_nodo = lista_expre.BuscarNodo(new Palabra("hola"));
+
+                //Lista<Palabra> mi_lista = mi_nodo.Dato.Sugerencias;
+                //Utiles.procesarExpresion("casa", mi_nodo.Dato.Sugerencias);
+                //Console.WriteLine("Nodo encontrado: " + mi_nodo.Dato.ToString());
                 Utiles.verlista(lista_expre);
             }
         }

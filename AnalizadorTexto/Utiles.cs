@@ -52,6 +52,15 @@ namespace AnalizadorTexto
                 }
                 
                 //todo: llenado de sugerencias
+                if(i != (expresion.Split(' ').Length - 1))
+                {
+                    string sugerencia = expresion.Split(' ')[i+1];
+                    Nodo<Palabra> mi_nodo = listaP.BuscarNodo(nPalabra);
+
+                    //Lista<Palabra> mi_lista = mi_nodo.Dato.Sugerencias;
+                    Utiles.procesarExpresion(sugerencia, mi_nodo.Dato.Sugerencias);
+                    
+                }
                 //listaP.
                 //Console.WriteLine(nPalabra.Cadena);
                 //Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
@@ -64,19 +73,15 @@ namespace AnalizadorTexto
 
         public static void verlista(Lista<Palabra> listaP)
         {
-            
+   
             Nodo<Palabra> n;
-
             n = listaP.Inicial;
             Console.WriteLine("---- Contenido de Lista: \r\n");
-
             while (n != null)
             {
                 Console.WriteLine(n.Dato.ToString());
-
                 n = n.Siguiente;
             }
-
             return;
         }
     }

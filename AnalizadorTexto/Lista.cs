@@ -86,5 +86,25 @@ namespace AnalizadorTexto
         {
 
         }
+
+        public Nodo<T> BuscarNodo(T dato)
+        {
+            int p;
+            Nodo<T> n;
+
+            n = inicial;
+
+            while (n != null)
+            {
+                if (n.Dato.Equals(dato))
+                {
+                    return n;
+                }
+
+                n = n.Siguiente;
+            }
+
+            return null;
+        }
     }
 }
