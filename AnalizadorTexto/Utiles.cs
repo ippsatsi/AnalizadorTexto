@@ -52,7 +52,7 @@ namespace AnalizadorTexto
                 }
                 
                 //todo: llenado de sugerencias
-                listaP.
+                //listaP.
                 //Console.WriteLine(nPalabra.Cadena);
                 //Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
                 //nPa.Sugerencias.Agregar(nPalabra);
