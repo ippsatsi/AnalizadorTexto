@@ -27,24 +27,25 @@ namespace AnalizadorTexto
         private void AnaTexto_Load(object sender, EventArgs e)
         {
             //Palabra pla = new Palabra("Luis");
-            lista_p.Agregar(new Palabra("Jose"));
-            lista_p.Agregar(new Palabra("Miguel"));
-            lista_p.Agregar(new Palabra("Luis"));
-            lista_expre.Agregar(new Palabra("Luis", lista_p));
-            //Console.WriteLine($"pala: {pla.Cadena}");
-            //Console.WriteLine($"palabra: {pla.ToString()}");
+            //lista_p.Agregar(new Palabra("Jose"));
+            //lista_p.Agregar(new Palabra("Miguel"));
+            //lista_p.Agregar(new Palabra("Luis"));
+            //lista_expre.Agregar(new Palabra("Luis", lista_p));
+            //Utiles.verlista(lista_expre);
 
-            Nodo<Palabra> n;
+            //int num = lista_expre.BuscarPosicion(pla);
+            //Console.WriteLine($"posicion: {num}---");
+            //Nodo<Palabra> n;
 
-            n = lista_expre.Inicial;
+            //n = lista_expre.Inicial;
             
-            Console.WriteLine($"mi nodo: {n.Dato.ToString()}");
-            while (n != null)
-            {
-                Console.WriteLine(n.Dato.ToString());
+            //Console.WriteLine($"mi nodo: {n.Dato.ToString()}");
+            //while (n != null)
+            //{
+            //    Console.WriteLine(n.Dato.ToString());
 
-                n = n.Siguiente;
-            }
+            //    n = n.Siguiente;
+            //}
         }
 
         private void btCerrar_Click(object sender, EventArgs e)
@@ -61,7 +62,6 @@ namespace AnalizadorTexto
 
             if (e.KeyCode == Keys.Enter)
             {
-                //guardar expresion en la lista   f
                 string textoExpresiones, expresion = txtExpresion.Text.Trim();
                 //Palabra nPa = new Palabra();
                 textoExpresiones = txtListExpresiones.Text;
@@ -72,24 +72,12 @@ namespace AnalizadorTexto
                 else
                 {
                     txtListExpresiones.Text = textoExpresiones + "\r\n" + expresion;
-                    //todo: llamar a funcion procesar expresion
                 }
+                //llamar a funcion procesar expresion
+                Utiles.procesarExpresion(expresion, lista_expre);
 
                 txtExpresion.Clear();
-
-                //for (int i = 0; i < expresion.Split(' ').Length; i++)
-                //{
-
-                //    Palabra nPalabra = new Palabra(expresion.Split(' ')[i]);
-                //    Console.WriteLine(nPalabra.Cadena);
-                //    Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
-                //    //nPa.Sugerencias.Agregar(nPalabra);
-                //    Lista<Palabra> fg = nPa.Sugerencias;
-
-                //}
-
-                //lista_expre.Agregar(nPa);
-
+                Utiles.verlista(lista_expre);
             }
         }
 

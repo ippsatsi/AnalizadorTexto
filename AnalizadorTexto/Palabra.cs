@@ -39,11 +39,22 @@ namespace AnalizadorTexto
         {
             Nodo<Palabra> nPalabra = sugerencias.Inicial;
             string expresion = null;
+            expresion = "Cadena: " + Cadena + "\r\n\t\tsugerencias: ";
+            int p = 0;
 
             while (nPalabra != null)
             {
-                expresion = expresion + ' ' + nPalabra.Dato.cadena;
+                if (p == 0)
+                {
+                    expresion = expresion + "\t- " + nPalabra.Dato.cadena;
+                }
+                else
+                {
+                    expresion = expresion + "\r\n\t\t\t\t\t\t- " + nPalabra.Dato.cadena;
+                }
+                //expresion = expresion + " - " + nPalabra.Dato.cadena;
                 nPalabra = nPalabra.Siguiente;
+                p++;
             }
             return expresion;
         }

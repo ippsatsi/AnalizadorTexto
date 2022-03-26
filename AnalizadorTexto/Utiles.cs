@@ -37,5 +37,47 @@ namespace AnalizadorTexto
             }
             return resultado;
         }
+
+        public static void procesarExpresion(string expresion, Lista<Palabra> listaP)
+        {
+ 
+            for (int i = 0; i < expresion.Split(' ').Length; i++)
+            {
+
+                Palabra nPalabra = new Palabra(expresion.Split(' ')[i]);
+                if (listaP.BuscarPosicion(nPalabra) == -1) //verificamos q no exista la palabra en la lista
+                {
+                    //agregamos palabra a la lista
+                    listaP.Agregar(nPalabra);
+                }
+                
+                //todo: llenado de sugerencias
+                listaP.
+                //Console.WriteLine(nPalabra.Cadena);
+                //Console.WriteLine($" i= {i} palabra: {nPalabra.Cadena}");
+                //nPa.Sugerencias.Agregar(nPalabra);
+                //Lista<Palabra> fg = nPa.Sugerencias;
+
+            }
+            return;
+        }
+
+        public static void verlista(Lista<Palabra> listaP)
+        {
+            
+            Nodo<Palabra> n;
+
+            n = listaP.Inicial;
+            Console.WriteLine("---- Contenido de Lista: \r\n");
+
+            while (n != null)
+            {
+                Console.WriteLine(n.Dato.ToString());
+
+                n = n.Siguiente;
+            }
+
+            return;
+        }
     }
 }
